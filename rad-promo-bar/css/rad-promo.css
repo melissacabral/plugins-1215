@@ -1,0 +1,40 @@
+#rad-promo-bar{
+	background-color: salmon;
+	color:white;
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	text-align: center;
+	padding:.25em;
+	z-index:99998;
+}
+.admin-bar #rad-promo-bar{
+	top:32px;
+}
+
+#rad-promo-bar a{
+	background: crimson;
+	padding:.25em;
+	display: inline-block;
+	color:white;
+	border-radius: .25em;
+	margin-left: .25em;
+	font-weight: bold;
+}
+
+body{
+	margin-top: 50px;
+}
+
+@media screen and (max-width:782px){
+	.admin-bar #rad-promo-bar{
+		top:46px;
+	}
+}
+/*hide the bar on small screens*/
+@media only screen and (max-width:500px){
+	#rad-promo-bar{
+		position: absolute;
+	}
+}
