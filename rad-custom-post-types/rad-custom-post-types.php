@@ -25,5 +25,29 @@ function rad_cpt(){
 		'menu_position'	=> 10,
 		'supports'		=> array('title', 'editor', 'thumbnail', 
 			'custom-fields', 'excerpt'),
+		'rewrite'		=> array( 'slug' => 'shop' ),
+	) );
+
+	//add a way to sort by brand
+	register_taxonomy( 'brand', 'product', array(
+		'hierarchical' 		=> true,
+		'show_admin_column'	=> true,
+		'labels' 			=> array(
+			'name' 				=> 'Brands',
+			'singular_name'		=> 'Brand',
+			'add_new_item' 		=> 'Add new Brand',
+			'search_items'		=> 'Search Brands',
+			'not_found'			=> 'No Brands to show',
+		),
 	) );
 }
+
+
+//flush rewrite rules (htaccess) when this plugin is activated
+function rad_cpt_flush(){
+	rad_cpt();
+	//this is a heavy operation. only call on plugin activation or theme activation
+	flush_rewrite_rules();
+	//do not generate any output with this function! (no echo)
+}
+register_activation_hook( __FILE__, 'rad_cpt_flush' );

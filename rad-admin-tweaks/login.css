@@ -1,0 +1,24 @@
+body, html{
+	background-color:lightSlateGray; 
+}
+#login{
+	width:30%;
+	min-width: 320px;
+}
+/*logo*/
+.login h1 a{
+	background-image: url('images/vespa.png');
+}
+/*button*/
+.login #wp-submit{
+	background-color: LightCoral;
+	border: none;
+	width:100%;
+	display: inline-block;
+	padding: 1em;
+	height: auto;
+	margin-top:1em;
+	font-size: 1.2em;
+	text-shadow:none;
+	box-shadow: none;
+}
